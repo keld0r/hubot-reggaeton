@@ -62,5 +62,5 @@ function GenerarCoro()
 }
 
 module.exports = function(robot) {
-  robot.respond(/un reggaeton/gi, generarLetra());
+  robot.respond(/un (reggaet(o|ó)n|reguet(o|ó)n|regaet(o|ó)n|reget(o|ó)n)/gi, generarLetra());
 };
