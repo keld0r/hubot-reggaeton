@@ -9,58 +9,69 @@
 //
 // Commands:
 //   hubot un reggaeton
+//
 // Author:
 //   @keld0r
 
-const largo_extrofa = 4;
-const max_estrofas = 1;
-const salto = "\n";
+const largoEstrofa = 4;
+const maxEstrofas = 1;
 
-const bloque1 = ['Mami', 'Gata', 'Perra', 'Zorra', 'Chica'];
-const bloque2 = ['yo quiero', 'vamos a', 'yo voy a', 'yo quiero', 'yo vengo a'];
-const bloque3 = ['castigarte', 'cogerte', 'encenderte', 'darte', 'azotarte'];
-const bloque4 = ['duro', 'rapido', 'lento', 'suave', 'fuerte'];
-const bloque5 = ['hasta que salga el sol','toda la noche','hasta el amanecer','hasta mañana','todo el dia'];
-const bloque6 = ['sin miedo','sin anestesia','en el piso','contra la pared','sin compromiso'];
-const firma = ['mas de 10 mil stickers vendidos, obligao','el que habla con las patas','el imperio del :jquery:','perreando hasta el -5'];
+const bloques = [
+  ['Mami', 'Gata', 'Perra', 'Zorra', 'Chica'],
+  ['yo quiero', 'vamos a', 'yo voy a', 'yo quiero', 'yo vengo a'],
+  ['castigarte', 'cogerte', 'encenderte', 'darte', 'azotarte'],
+  ['duro', 'rapido', 'lento', 'suave', 'fuerte'],
+  [
+    'hasta que salga el sol',
+    'toda la noche',
+    'hasta el amanecer',
+    'hasta mañana',
+    'todo el dia'
+  ],
+  [
+    'sin miedo',
+    'sin anestesia',
+    'en el piso',
+    'contra la pared',
+    'sin compromiso'
+  ]
+];
+const firma = [
+  'mas de 10 mil stickers vendidos, obligao',
+  'el que habla con las patas',
+  'el imperio del :jquery:',
+  'perreando hasta el -5'
+];
+
+function random(array)
+{
+  return array[Math.floor(Math.random() * array.length)];
+}
 
 function generarLetra()
 {
-	let estrofa = [];
-	let letra = [];
-
-	for (i = 0; i < max_estrofas; i++)
-	{
-		estrofa = [];
-
-		for (j = 0; j < largo_extrofa; j++)
-		estrofa.push(GenerarRenglon());
-		letra.push(estrofa.join("\n")+salto);
-		letra.push("[CORO]");
-		letra.push(GenerarCoro()+" … x3 :yeah:"+salto);
-	}
-	return letra.join("\n")+"\nEl papi del flow, "+firma[Math.floor(Math.random()*firma.length)];
+  const letra = [...Array(maxEstrofas).keys()].reduce((acc, curr) => {
+    const estrofa = [...Array(largoEstrofa).keys()].map(() => generarRenglon())
+    acc.push(`${estrofa.join('\n')}\n`);
+    acc.push('[CORO]');
+    acc.push(`${generarCoro()} … x3 :yeah:\n`);
+    return acc;
+  }, []).join('\n');
+	return `${letra}\nEl papi del flow, ${random(firma)}`;
 }
 
-
-function GenerarRenglon()
+function generarRenglon()
 {
-	var q =
-	bloque1[Math.floor(Math.random()*bloque1.length)]+" "+
-	bloque2[Math.floor(Math.random()*bloque2.length)]+" "+
-	bloque3[Math.floor(Math.random()*bloque3.length)]+" "+
-	bloque4[Math.floor(Math.random()*bloque4.length)]+" "+
-	bloque5[Math.floor(Math.random()*bloque5.length)];
-	return q;
+  return bloques.map(bloque => random(bloque)).join(' ');
 }
 
-function GenerarCoro()
-{	
-	let verbo = bloque3[Math.floor(Math.random()*bloque3.length)];
-
-	return verbo+" "+verbo+" "+verbo+" "+bloque5[Math.floor(Math.random()*bloque5.length)]+" "+bloque4[Math.floor(Math.random()*bloque4.length)];
+function generarCoro()
+{
+	const verbo = `${random(bloques[2])} `;
+  return `${verbo.repeat(3)}${random(bloques[4])} ${random(bloques[3])}`;
 }
 
-module.exports = function(robot) {
-  robot.respond(/un (reggaet(o|ó)n|reguet(o|ó)n|regaet(o|ó)n|reget(o|ó)n)/gi, generarLetra());
+module.exports = function (robot)
+{
+	robot.respond(/un reg(ga|u|a|e)?et(o|ó)n/gi, generarLetra());
 };
