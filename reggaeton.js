@@ -73,5 +73,7 @@ function generarCoro()
 
 module.exports = function (robot)
 {
-	robot.respond(/un reg(ga|u|a|e)?et(o|ó)n/gi, generarLetra());
+  robot.respond(/un reg(ga|u|a|e)?et(o|ó)n/gi, function (res) {
+    res.send(generarLetra());
+  });
 };

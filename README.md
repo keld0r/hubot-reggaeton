@@ -4,41 +4,40 @@
 
 ### Instalacion:
 
-````
+```bash
 $ npm install hubot-reggaeton --save
-````
+```
 
 Agregar en `external-scripts.json`:
 
-````
+```json
 [
   ..
   "hubot-reggaeton"
 ]
-````
+```
 
 ### Uso:
 
-````
+```bash
 hubot> hubot un reggaeton
-````
+```
 
 **Ejemplo:**
 
-````
+```bash
 hubot> hubot un reggaeton
 
 hubot> Chica yo quiero cogerte duro todo el dia
-Gata yo vengo a cogerte fuerte hasta mañana
+Gata yo vengo a cogerte fuerte hasta maÃ±ana
 Chica yo quiero encenderte suave hasta que salga el sol
-Perra vamos a castigarte rapido hasta mañana
+Perra vamos a castigarte rapido hasta maÃ±ana
 
 [CORO]
-azotarte azotarte azotarte hasta el amanecer duro … x3 :yeah:
+azotarte azotarte azotarte hasta el amanecer duro â€¦ x3 :yeah:
 
 El papi del flow, mas de 10 mil stickers vendidos, obligao
-````
+```
 
 ### Licencia:
 [MIT](https://opensource.org/licenses/MIT)
-
