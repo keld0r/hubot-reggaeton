@@ -1,4 +1,3 @@
-
 // Description:
 //   Hubot canta un perreo intenso
 //
@@ -13,9 +12,9 @@
 // Author:
 //   @keld0r
 
-const largo_extrofa=4;
-const max_estrofas=1;
-const salto="\n"
+const largo_extrofa = 4;
+const max_estrofas = 1;
+const salto = "\n"
 
 const bloque1 = ['Mami', 'Gata', 'Perra', 'Zorra', 'Chica'];
 const bloque2 = ['yo quiero', 'vamos a', 'yo voy a', 'yo quiero', 'yo vengo a'];
@@ -23,7 +22,7 @@ const bloque3 = ['castigarte', 'cogerte', 'encenderte', 'darte', 'azotarte'];
 const bloque4 = ['duro', 'rapido', 'lento', 'suave', 'fuerte'];
 const bloque5 = ['hasta que salga el sol','toda la noche','hasta el amanecer','hasta mañana','todo el dia'];
 const bloque6 = ['sin miedo','sin anestesia','en el piso','contra la pared','sin compromiso'];
-const firma = ['mas de 10 mil stickers vendidos, obligao','el que habla con las patas','el imperio del :jquery:','perreando hasta el -5 '];
+const firma = ['mas de 10 mil stickers vendidos, obligao','el que habla con las patas','el imperio del :jquery:','perreando hasta el -5'];
 
 function generarLetra()
 {
