@@ -14,7 +14,7 @@
 
 const largo_extrofa = 4;
 const max_estrofas = 1;
-const salto = "\n"
+const salto = "\n";
 
 const bloque1 = ['Mami', 'Gata', 'Perra', 'Zorra', 'Chica'];
 const bloque2 = ['yo quiero', 'vamos a', 'yo voy a', 'yo quiero', 'yo vengo a'];
