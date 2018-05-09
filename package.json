@@ -1,0 +1,16 @@
+{
+  "name": "hubot-reggaeton",
+  "version": "1.0.0",
+  "description": "Hubot canta un reggaeton",
+  "main": "reggaeton.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "reggaeton",
+    "regueton",
+    "perreo"
+  ],
+  "author": "Keldor",
+  "license": "MIT"
+}
